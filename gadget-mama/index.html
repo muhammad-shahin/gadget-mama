@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daisy Ui -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .popup{
+        display: none;
+      }
+    </style>
+    <title>Phone Hunting API</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-6xl text-center my-4">Gadget Mama</h1>
+    </header>
+    <main class="container mx-auto">
+      <!-- Search Bar -->
+      <section class="my-10">
+        <!-- search bar 1 -->
+        <!-- <input id="search-field" type="text" placeholder="Search Phone" class="bg-gray-200 rounded-lg px-4 py-2" >
+            <button id="search-btn" class="bg-blue-700 text-white py-2 px-4 rounded-lg mr-5" onclick="handleSearch()">Search</button> -->
+
+        <!-- search bar 2 -->
+        <input
+          id="search-field2"
+          type="text"
+          placeholder="Search Phone"
+          value="iphone"
+          class="bg-gray-200 rounded-lg px-4 py-2"
+        />
+        <button
+          id="search-btn2"
+          class="bg-rose-500 text-white py-2 px-4 rounded-lg"
+          onclick="handleSearch2()"
+        >
+          Search
+        </button>
+      </section>
+      <!-- custom modal -->
+      <div id="custom-modal" class="popup fixed z-[1] left-0 top-0 w-[100vw] h-[100vh] bg-[#11111166] text-center justify-center items-center">
+        <!-- modal image -->
+        <div class="bg-white p-6 w-[90vw] md:w-[70vw] lg:w-[30vw] mx-auto space-y-3 rounded-lg">
+          <!-- modal image -->
+          <div class="bg-gray-300 p-3 rounded-lg">
+            <img id="phone-img" class="mx-auto " src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro-max.jpg" alt="">
+          </div>
+
+          <!-- modal body -->
+          <div class="text-left space-y-3">
+          <p id="phone-name" class="text-black text-xl font-semibold">Iphone 13 Pro Max</p>
+          <p class="text-black text-lg font-bold">Storage: <span id="phone-storage" class="text-gray-400 text-lg font-normal">128GB/256GB/512GB</span></p>
+          <p class="text-black text-lg font-bold">Display Size: <span id="phone-display" class="text-gray-400 text-lg font-normal">6.7 Inch</span></p>
+          <p class="text-black text-lg font-bold">Chipset: <span id="phone-chipset" class="text-gray-400 text-lg font-normal">6.7 Inch</span></p>
+          <p class="text-black text-lg font-bold">Memory: <span id="phone-memory" class="text-gray-400 text-lg font-normal">6.7 Inch</span></p>
+          <p class="text-black text-lg font-bold">Release Date: <span id="phone-releaseDate" class="text-gray-400 text-lg font-normal">6.7 Inch</span></p>
+          <p class="text-black text-lg font-bold">Brand: <span id="phone-brand" class="text-gray-400 text-lg font-normal">6.7 Inch</span></p>
+        </div>
+        <button id="close-modal-btn" onclick="closeModal()" class="bg-rose-500 px-3 py-2 rounded-lg text-xl text-white text-center">Close</button>
+          
+        </div>
+      </div>
+      <section>
+        <!-- loading-spinner -->
+        <div id="loading-spinner" class="hidden text-center">
+          <span class="loading text-rose-500 loading-spinner loading-lg"></span>
+        </div>
+        <!-- search result -->
+        <div
+          id="phone-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+        ></div>
+        <!-- show all btn -->
+        <div id="show-all-container" class="hidden my-5 w-full text-center">
+          <button
+            class="bg-sky-500 text-white py-2 px-4 rounded-lg hover:bg-transparent hover:border hover:border-sky-500 hover:text-sky-500 text-lg"
+            id="show-all-btn"
+            onclick="showAllPhones()"
+          >
+            Show All
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/phone.js"></script>
+  </body>
+</html>
